@@ -1,13 +1,12 @@
 package com.example.request;
 
-import java.util.List;
-
-import javax.validation.constraints.NotBlank;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -25,6 +24,6 @@ public class CreateStudentRequest {
 
 	private String city;
 
-	private List<CreateSubjectRequest> subjectsLearning;
+	private List<CreateSubjectRequest> subjectsLearning = new ArrayList<>();
 
 }
