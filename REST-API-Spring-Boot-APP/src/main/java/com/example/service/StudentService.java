@@ -15,8 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hibernate.Hibernate.initialize;
-
 
 @Service
 public class StudentService {
@@ -76,9 +74,7 @@ public class StudentService {
 
 	@Transactional
 	public Student getStudentById(long id) {
-		Student student = studentRepository.findById(id).get();
-		initialize(student.getLearningSubjects());
-		return student;
+		return studentRepository.findById(id).get();
 	}
 	
 }
