@@ -24,7 +24,7 @@ public class Subject {
 	@Column(name = "marks_obtained")
 	private Double marksObtained;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne
 	@JoinColumn(name = "student_id")
 	private Student student;
 }

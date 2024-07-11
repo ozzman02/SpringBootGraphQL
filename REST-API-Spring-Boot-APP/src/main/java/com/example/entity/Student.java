@@ -29,11 +29,11 @@ public class Student {
 	@Column(name = "email")
 	private String email;
 	
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
 	
-	@OneToMany(mappedBy = "student", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "student")
 	private List<Subject> learningSubjects;
 	
 	public Student (CreateStudentRequest createStudentRequest) {
