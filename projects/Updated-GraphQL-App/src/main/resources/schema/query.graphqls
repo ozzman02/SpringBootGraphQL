@@ -1,0 +1,43 @@
+type Query {
+	firstQuery : String
+	secondQuery : String
+	fullName(sampleRequest : SampleRequest) : String
+	student(id : Int) : StudentResponse
+}
+
+input SampleRequest {
+	firstName : String!
+	lastName : String
+}
+
+type StudentResponse {
+	id : Int
+	firstName : String
+	lastName : String
+	email : String
+	street : String
+	city : String
+	learningSubjects(subjectNameFilter : SubjectNameFilter) : [SubjectResponse]
+	fullName : String
+}
+
+type SubjectResponse {
+	id : Int
+	subjectName : String
+	marksObtained : Float
+}
+
+enum SubjectNameFilter {
+	ALL
+	JAVA,
+	REACT,
+	ANGULAR,
+	SPRING,
+	HIBERNATE,
+	MAVEN,
+	AWS,
+	KUBERNETES,
+	GIT,
+	BASH,
+	QA_AUTOMATION
+}
